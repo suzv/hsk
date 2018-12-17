@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @word.word %>
+</p>
+
+<p>
+  <strong>Pinyin:</strong>
+  <%= @word.pinyin.pinyin %>
+</p>
+<p>
+  <strong>Meaning:</strong>
+  <%= @word.meaning.meaning %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>
+
+<br><br><br>

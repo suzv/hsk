@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<div class="container" style="padding:10%">
+    <h1 style="text-align:center">Palabras</h1>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+
+         <th scope="col">Palabra</th>
+         <th scope="col">Pinyin</th>
+         <th scope="col">Significado</th>
+       </tr>
+     </thead>
+    <tbody>
+        <% @words.each do |word| %>
+          <tr>
+            <td><%= word.word %></td>
+            <td><%= word.pinyin.pinyin if word.pinyin.present? %></td>
+            <td><%= word.meaning.meaning if word.meaning.present? %></td>
+            <td><%= link_to 'Ver', word %></td>
+            <td><%= link_to 'Editar', edit_word_path(word) %></td>
+            <td><%= link_to 'Eliminar', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <div class="" style="margin-left:30%">
+      <button type="submit" class="btn btn-theme" ><%= link_to 'AGREGA UNA NUEVA PALABRA', new_word_path %></button>
+    </div>
+</div>

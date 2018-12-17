@@ -1,0 +1,68 @@
+<html class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hsk</title>
+    <meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <section id="header" class="appear"></section>
+	<div class="navbar navbar-fixed-top " role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+    <div class="container">
+		    <div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				    <span class="fa fa-bars color-white"></span>
+					</button>
+					<h1>
+            <a class="navbar-brand"  data-0="line-height:90px;" data-300="line-height:50px;">PRACTICA-HSK</a>
+          </h1>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+						<li class="nav-item"><%= link_to 'Inicio',root_path%></li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= new_user_registration_path %>">Registrate </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= user_session_path %>">Ingresa</a>
+            </li>
+            <%if user_signed_in?%>
+              <li class="nav-item">
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              </li>
+            <%end%>
+						<li><a href="http://www.chinesetest.cn/uregisterstart.do">Inscribete para la prueba</a></li>
+
+					</ul>
+				</div><!--/.navbar-collapse -->
+			</div>
+		</div>
+
+      <section class="featured">
+        <div class="container">
+          <div class="row mar-bot40">
+            <div class="col-md-6 col-md-offset-3">
+
+              <div class="align-center">
+                <img src="<%= asset_path 'logo.png' %>"" alt="" height="300" width="300">
+                <h2 class="slogan">Bienvenido a Practica-HSK</h2>
+                <p>
+                  Practica-HSK es una herramienta que te permitirá reforzar tus conocimientos del chino mandarín a través de la practica del vocabulario necesario para rendir la prueba HSK
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <%= yield %>
+
+    <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
+
+  </body>
+</html>
