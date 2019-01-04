@@ -1,2 +1,36 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+
+<div style="">
+
+  <% @pinyin.each do |i| %>
+    <div class="pinyin-box" id="<%= i.word_id %>">
+      <%= i.pinyin %>
+    </div>
+  <% end %>
+
+
+
+  <div class="word-box">
+    <h5><%= @word.word %></h5>
+  </div>
+
+
+  <% @meaning.each do |i| %>
+    <div class="meaning-box" id="<%= i.word_id %>">
+      <%= i.meaning %>
+    </div>
+  <% end %>
+
+</div>
+
+
+<script>
+  $(".pinyin-box").click ( function(e) {
+    console.log(e.target.id)
+  })
+  $(".meaning-box").click ( function(e) {
+    console.log(e.target.id)
+  })
+
+
+
+</script>
