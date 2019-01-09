@@ -43,7 +43,7 @@ class WordsController < ApplicationController
   # PATCH/PUT /add_words/1
   # PATCH/PUT /add_words/1.json
   def update
-    byebug
+    
     respond_to do |format|
       if @word.update_attributes(word_params)
         format.html { redirect_to @word, notice: 'word was successfully updated.' }

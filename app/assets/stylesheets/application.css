@@ -21,11 +21,9 @@
  */
 
 
-.pinyin-box {
-  border: 1px solid black;
-  margin: 10px
-}
-.meaning-box {
-  border: 1px solid black;
-  margin: 10px
+.show-box {
+  width: 300px;
+  border: 25px;
+  padding: 25px;
+  margin: 25px;
 }

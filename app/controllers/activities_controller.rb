@@ -6,6 +6,11 @@ class ActivitiesController < ApplicationController
   end
 
   def check_result
-    
+    if params['pinyin'] == params['pinyin_answer']
+
+    else
+
+    end
   end
+
 end

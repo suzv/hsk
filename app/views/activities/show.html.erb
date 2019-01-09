@@ -1,36 +1,25 @@
 
-<div style="">
-
-  <% @pinyin.each do |i| %>
-    <div class="pinyin-box" id="<%= i.word_id %>">
-      <%= i.pinyin %>
-    </div>
+<div class="show-box">
+<%= form_tag(activities_check_result_path) do %>
+  <input type="hidden" name="pinyin_answer" value="<%= @word.pinyin.pinyin %>">
+  <% @pinyin.each do |pinyin| %>
+    <input type="radio" name="pinyin" value="<%= pinyin.pinyin %>">
+    <label for="pinyin"> <%= pinyin.pinyin %></label>
   <% end %>
-
 
 
   <div class="word-box">
-    <h5><%= @word.word %></h5>
+    <h1><%= @word.word %></h1>
   </div>
 
 
-  <% @meaning.each do |i| %>
-    <div class="meaning-box" id="<%= i.word_id %>">
-      <%= i.meaning %>
-    </div>
+<input type="hidden" name="meaning_answer" value="<%= @word.meaning.meaning %>">
+  <% @meaning.each do |meaning| %>
+  <input type="radio" name="meaning" value="<%= meaning.meaning %>">
+  <label for="meaning"> <%= meaning.meaning %></label>
+  <% end %>
+
+    <%= submit_tag %>
   <% end %>
 
 </div>
-
-
-<script>
-  $(".pinyin-box").click ( function(e) {
-    console.log(e.target.id)
-  })
-  $(".meaning-box").click ( function(e) {
-    console.log(e.target.id)
-  })
-
-
-
-</script>
