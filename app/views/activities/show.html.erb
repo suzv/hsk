@@ -1,25 +1,75 @@
 
 <div class="show-box">
-<%= form_tag(activities_check_result_path) do %>
-  <input type="hidden" name="pinyin_answer" value="<%= @word.pinyin.pinyin %>">
-  <% @pinyin.each do |pinyin| %>
-    <input type="radio" name="pinyin" value="<%= pinyin.pinyin %>">
-    <label for="pinyin"> <%= pinyin.pinyin %></label>
-  <% end %>
 
 
-  <div class="word-box">
-    <h1><%= @word.word %></h1>
-  </div>
 
+<div style="margin-left:40px, margin-rigth:40px">
+<% @pinyin.each do |i| %>
+  <%= render 'box-button', text:i.pinyin, value:i.word_id %>
+<% end %>
+</div>
+<br>
+<br>
+<br>
+<br>
 
-<input type="hidden" name="meaning_answer" value="<%= @word.meaning.meaning %>">
-  <% @meaning.each do |meaning| %>
-  <input type="radio" name="meaning" value="<%= meaning.meaning %>">
-  <label for="meaning"> <%= meaning.meaning %></label>
-  <% end %>
+<div class="word-box">
+  <h1 style="padding-left: 30px"><span id="word-check" data-value="<%= @word.id %>"> <%= @word.word %></span></h1>
+</div>
 
-    <%= submit_tag %>
-  <% end %>
+<br>
+<br>
+<br>
+<br>
+<div style="margin-left:40px, margin-rigth:40px">
+<% @meaning.each do |i| %>
+  <%= render 'box-button', text:i.meaning, value:i.word_id %>
+<% end %>
+</div>
+
+<br>
+<br>
+<br>
+
+<button type="button" name="button" id="next-button">NEXT</button>
 
 </div>
+
+</div>
+
+
+<script>
+
+  let nextButton = document.getElementById('next-button');
+  let playerScore = 0;
+
+  nextButton.addEventListener('click', function(){
+    runGame = true;
+    wordMix = createMix();
+  });
+
+  let pinyinButton = document.getElementsByClassName('box-button');
+  let meaningButton = document.getElementsByClassName('box-button2');
+  let pinyinCheck = document.getElementById('pinyin-check');
+
+  $(".box-button").on('click', function(e){
+    if (e.currentTarget.dataset.value == $('#word-check').data('value')) {
+      alert('SI');
+    }else{
+      alert('NO')
+    }
+  });
+
+  $(".box-button2").on('click', function(e){
+    if (e.currentTarget.dataset.value == $('#word-check').data('value')) {
+      alert('SI');
+    }else{
+      alert('NO')
+    }
+  });
+
+
+
+
+
+</script>

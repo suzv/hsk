@@ -22,8 +22,34 @@
 
 
 .show-box {
-  width: 300px;
+  padding-left: 30px;
+  width: 900px;
   border: 25px;
   padding: 25px;
   margin: 25px;
+  text-align: center;
+  margin-left:100px:
+}
+
+.box-button {
+  display: inline-table;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  text-align: center;
+  box-shadow: 0 0 0 1px;
+  border-style: hidden;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.box-button2 {
+  display: inline-block;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 60px 40px;
+  cursor: pointer;
+  margin-left:20px;
+
 }

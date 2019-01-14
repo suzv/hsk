@@ -5,12 +5,4 @@ class ActivitiesController < ApplicationController
     @pinyin = [@word.pinyin, Activity.new.random_pinyin, Activity.new.random_pinyin].shuffle
   end
 
-  def check_result
-    if params['pinyin'] == params['pinyin_answer']
-
-    else
-
-    end
-  end
-
 end
