@@ -21,8 +21,11 @@
  */
 
 
+
+
+
 .show-box {
-  padding-left: 30px;
+
   width: 900px;
   border: 25px;
   padding: 25px;
@@ -35,10 +38,10 @@
   display: inline-table;
   height: 150px;
   width: 150px;
+
   border-radius: 100%;
   text-align: center;
-  box-shadow: 0 0 0 1px;
-  border-style: hidden;
+  box-shadow: 0 0 0 2px;
   cursor: pointer;
   margin: 0 10px;
 }
@@ -52,4 +55,8 @@
   cursor: pointer;
   margin-left:20px;
 
+}
+
+.section#footer {
+  background: #6db9b0;
 }

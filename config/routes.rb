@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'scores/update'
   get 'pages/index'
   root to: 'pages#index'
 
   resources :words
-  post 'activities/check_result'
+  post 'activities/next_check'
   devise_for :users
   resources :activities
   resources :scores

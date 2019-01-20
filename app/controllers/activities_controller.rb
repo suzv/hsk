@@ -5,4 +5,13 @@ class ActivitiesController < ApplicationController
     @pinyin = [@word.pinyin, Activity.new.random_pinyin, Activity.new.random_pinyin].shuffle
   end
 
+  def next_check
+    correct = params[:correct]
+    playerScore = 0
+    if correct.present?
+      playerScore += 5
+    else
+      playerScore += 0
+    end
+  end
 end
