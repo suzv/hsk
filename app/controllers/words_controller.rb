@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
-  before_action :set_word, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource param_method: :word_params
+  # before_action :set_word, only: [:show, :edit, :update, :destroy]
 
   # GET /add_words
   # GET /add_words.json
@@ -43,7 +44,7 @@ class WordsController < ApplicationController
   # PATCH/PUT /add_words/1
   # PATCH/PUT /add_words/1.json
   def update
-    
+
     respond_to do |format|
       if @word.update_attributes(word_params)
         format.html { redirect_to @word, notice: 'word was successfully updated.' }

@@ -1,4 +1,8 @@
 class ScoresController < ApplicationController
-  def update
+  def correct
+
+  end
+  def wrong
+
   end
 end

@@ -15,7 +15,8 @@ Rails.application.config.assets.paths << Rails.root.join('vendor','assets','skin
 Rails.application.config.assets.paths << Rails.root.join('vendor','assets','stylesheets')
 
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
-Rails.application.config.assets.precompile += %w( *.js *.css *.eot *.svg *.ttf *.woff *.png )
+#Rails.application.config.assets.precompile += %w( *.js *.css *.eot *.svg *.ttf *.woff *.png )
+#Rails.application.config.assets.precompile += %w( *.eot *.svg *.ttf *.woff )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

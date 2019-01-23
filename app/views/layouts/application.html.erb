@@ -26,19 +26,35 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
 						<li class="nav-item"><%= link_to 'Inicio',root_path%></li>
+
+            <%if user_signed_in? == false%>
             <li class="nav-item">
               <a class="nav-link" href="<%= new_user_registration_path %>">Registrate </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<%= user_session_path %>">Ingresa</a>
             </li>
+            <% end %>
+
             <%if user_signed_in?%>
               <li class="nav-item">
-                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                <%= link_to('Logout', destroy_user_session_path(id: current_user.id, authenticity_token: form_authenticity_token), method: :delete) %>
               </li>
             <%end%>
+
 						<li><a href="http://www.chinesetest.cn/uregisterstart.do">Inscribete para la prueba</a></li>
 
+        
+
+
+
+
+
+            <% if user_signed_in?%>
+               <li style="color:white; padding-top:15px ;opacity:0.8">    <h4>Hola:
+               <%= current_user.email%></h4> </li>
+
+            <% end %>
 					</ul>
 				</div><!--/.navbar-collapse -->
 			</div>
@@ -64,7 +80,7 @@
 
 
 
-    
+
     <%= yield %>
 
     <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>

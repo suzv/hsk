@@ -1,2 +1,102 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<section id="section-services" class="section pad-bot30 bg-white">
+<div class="col-md-4">
+
+</div>
+<div class="col-md-3"
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Usuario Nuevo</h5>
+      <p class="card-text">Regístrate para empezar tu práctica!</p>
+      <a class="btn btn-primary"><%= link_to 'Regístrate', new_user_registration_path %></a>
+    </div>
+  </div>
+</div>
+<div class="col-md-3"
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Usuario Registrado</h5>
+      <p class="card-text"> Si ya estas registrado ingresa a tu cuenta!</p>
+      <a class="btn btn-primary">  <%= link_to 'Ingresa', user_session_path %></a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</section>
+
+
+
+<section id="footer" class="section footer">
+  <div class="col-md-2">
+
+  </div>
+
+  <div class="col-md-4" style="background:white; opacity:0.75; border-radius:25px;margin-top: 35px">
+    <br>
+
+    <h4 style="padding-left:5%">Próximas fechas de rendición!</h4>
+
+    <table class="table">
+         <thead class="thead-dark">
+           <tr>
+             <th scope="col"></th>
+             <th scope="col">Fecha</th>
+             <th scope="col">Incripciones hasta</th>
+             <th scope="col">Resultados</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <th scope="row">1</th>
+             <td>23 - 03 -2019  </td>
+             <td>24 - 01 - 2019</td>
+             <td>23 - 04 - 2019</td>
+           </tr>
+           <tr>
+             <th scope="row">2</th>
+             <td>13 - 07 -2019  </td>
+             <td>16 - 06 - 2019</td>
+             <td>13 - 08 - 2019</td>
+           </tr>
+           <tr>
+             <th scope="row">3</th>
+             <td>01 - 12 -2019  </td>
+             <td>03 - 11 - 2019</td>
+             <td>01 - 01 - 2020</td>
+           </tr>
+         </tbody>
+        </table>
+
+  </div>
+
+  <div class="col-md-2">
+    <img  style="width: 500px" src="<%= image_path 'hsktest' %>" alt="">
+  </div>
+
+
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+      <div class="col-sm-12 align-center">
+                  <ul class="social-network social-circle">
+                      <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                      <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+      </div>
+    </div>
+
+
+  </div>
+
+</section>

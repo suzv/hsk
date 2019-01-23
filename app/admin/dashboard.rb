@@ -10,6 +10,21 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+    # columns do
+    #   column do
+    #     panel "Palabras" do
+    #       ul do
+    #           Words do |word|
+    #            word.word
+    #            word.pinyin.pinyin
+    #            word.meaning.meaning
+    #          end
+    #       end
+    #     end
+    #   end
+    # end
+
+
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do
