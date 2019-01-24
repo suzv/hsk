@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  load_and_authorize_resource param_method: :check_params
+  # load_and_authorize_resource param_method: :check_params
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token, :only => [:next_check]
 
@@ -11,18 +11,20 @@ class ActivitiesController < ApplicationController
 
   def next_check
     @correct = params["param1"]
-
-    @score = Score.find(params[:user_id])
-    @newscore = Score.new
-
-
-    playerScore = 0
-    if @correct.present?
-      playerScore += 5
-    else
-      playerScore += 0
+    @score = Score.find_by_user_id(params[:user_id])
+    if @score.nil?
+    @score = Score.new
     end
-    redirect_to activity_path(show)
+    playerScore = 0
+    @score = playerScore
+    if @correct.present?
+      @score += 5
+    else
+      @score += 0
+    end
+    respond_to do |format|
+      format.html { redirect_to activity_path(1) }
+    end
   end
 
   private

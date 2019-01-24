@@ -10,19 +10,14 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
-    # columns do
-    #   column do
-    #     panel "Palabras" do
-    #       ul do
-    #           Words do |word|
-    #            word.word
-    #            word.pinyin.pinyin
-    #            word.meaning.meaning
-    #          end
-    #       end
-    #     end
-    #   end
-    # end
+    section "Palabras" do
+     table_for Word.all do |t|
+       t.column("Word") { |task| task.word }
+       t.column("Pinyin") { |task| task.pinyin.pinyin }
+       t.column("Meaning") { |task| task.meaning.meaning }
+     end
+   end
+
 
 
     # Here is an example of a simple dashboard with columns and panels.

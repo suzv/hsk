@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
+
+
   #
  # check_authorization :unless => :is_devise_or_active_admin?
  #

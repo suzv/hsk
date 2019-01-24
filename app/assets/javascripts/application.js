@@ -26,5 +26,6 @@
 //= require main
 //= require rails-ujs
 //= require activestorage
+//= require activity
 //= require turbolinks
 //= require_tree .

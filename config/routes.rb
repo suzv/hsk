@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'scores/update'
   get 'pages/index'
-  root to: 'activities#show'
+  root to: 'pages#index'
 
   resources :words
   post 'activities/next_check'
-  
+
   resources :activities
   resources :scores
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
