@@ -1,3 +1,8 @@
+$(document).ready(function() {
+
+
+
+
 var nextButton = document.getElementById('next-button');
 var playerScore = 0;
 var pinyinButton = document.getElementsByClassName('box-button');
@@ -35,3 +40,6 @@ if(nextButton){
 
   }, false);
 }
+
+
+});
