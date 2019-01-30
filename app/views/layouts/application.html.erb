@@ -27,7 +27,7 @@
 					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
 
             <%if user_signed_in?%>
-            <li class="nav-item"><%= link_to 'Inicio', activity_path(current_user.id)%> </li>
+            <li class="nav-item"><%= link_to 'Practica!', activity_path(1)%> </li>
             <% else %>
 						<li class="nav-item"><%= link_to 'Inicio',root_path%> </li>
             <%end%>
@@ -49,6 +49,7 @@
 
 						<li><a href="http://www.chinesetest.cn/uregisterstart.do">Inscribete para la prueba</a></li>
 
+            <li class="nav-item"><%= link_to 'Admin', admin_user_session_path%> </li>
 
 
 

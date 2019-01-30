@@ -1,35 +1,54 @@
-<section id="section-services" class="section pad-bot30 bg-white">
-<div class="col-md-4">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-</div>
-<div class="col-md-3"
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Usuario Nuevo</h5>
-      <p class="card-text">Regístrate para empezar tu práctica!</p>
-      <a class="btn btn-primary"><%= link_to 'Regístrate', new_user_registration_path %></a>
+<% unless user_signed_in? %>
+  <div class="container ">
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
+      <div class="card" style="width: 30rem;">
+        <img  style="width: 300px" src="<%= image_path 'notregistered' %>" alt="">
+        <div class="card-body">
+          <br>
+          <h5 class="card-title" style="text-align:center">Usuario Nuevo</h5>
+          <p class="card-text" style="text-align:center">Regístrate para empezar tu práctica!</p>
+          <br>
+          <div class="col-md-4">
+
+          </div>
+          <button type="" class="btn btn-theme"><%= link_to 'Regístrate', new_user_registration_path %></button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
+      <div class="card" style="width: 30rem;">
+          <img  style="width: 300px" src="<%= image_path 'registered' %>" alt="">
+        <div class="card-body">
+          <br>
+          <h5 class="card-title" style="text-align:center">Usuario Registrado</h5>
+          <p class="card-text" style="text-align:center"> Si ya estas registrado ingresa a tu cuenta!</p>
+          <br>
+          <div class="col-md-4">
+          </div>
+          <button type="" class="btn btn-theme" ><%= link_to 'Ingresa', user_session_path %></button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<div class="col-md-3"
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Usuario Registrado</h5>
-      <p class="card-text"> Si ya estas registrado ingresa a tu cuenta!</p>
-      <a class="btn btn-primary">  <%= link_to 'Ingresa', user_session_path %></a>
-    </div>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
+<% end %>
 
-</section>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 <section id="footer" class="section footer">

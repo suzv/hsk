@@ -12,12 +12,11 @@ class Activity < ApplicationRecord
     random_meaning = Meaning.find(random_offset)
   end
 
-\
   def random_pinyin
     random_offset = rand(Pinyin.first.id..Pinyin.last.id)
     random_pinyin = Pinyin.find(random_offset)
   end
-  
+
   def shuffle
     sort_by { rand }
   end

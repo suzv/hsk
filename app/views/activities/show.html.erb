@@ -18,7 +18,7 @@
 
         <div style="margin-left:40px, margin-rigth:40px">
           <% @pinyin.each do |i| %>
-          <%= render 'box-button', text:i.pinyin, value:i.word_id %>
+            <%= render 'pinyin_button', text:i.pinyin, value:i.word_id %>
           <% end %>
         </div>
         <br>
@@ -34,14 +34,13 @@
         <br>
       <div style="margin-left:40px, margin-rigth:40px">
         <% @meaning.each do |i| %>
-        <%= render 'box-button', text:i.meaning, value:i.word_id %>
+        <%= render 'meaning_button', text:i.meaning, value:i.word_id %>
         <% end %>
       </div>
         <br>
         <br>
         <br>
-        <button type="button" name="button" id="next-button" class="btn btn-info">NEXT</button>
-
+        <button type="button" name="button" id="next-button" class="btn btn-info" >NEXT</button>
       </div>
     </div>
   </div>
@@ -112,13 +111,13 @@
     <br>
     <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
       <div class="col-sm-12 align-center">
-                  <ul class="social-network social-circle">
-                      <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-                      <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
+        <ul class="social-network social-circle">
+            <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
       </div>
     </div>
 
@@ -126,3 +125,34 @@
   </div>
 
 </section>
+
+
+<script>
+  var nextButton = document.getElementById('next-button');
+
+    nextButton.addEventListener('click', function(){
+      var score = document.getElementsByClassName('visible_correct')
+      $.ajax({
+        url: "<%= activities_next_check_path%>",
+        type: 'POST',
+        dataType: 'script',
+        data: {param1: score.length}
+      })
+      .done(function() {
+        console.log("success");
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+
+    }, false);
+
+
+
+
+
+
+</script>

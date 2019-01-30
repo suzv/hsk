@@ -10,21 +10,40 @@ class ActivitiesController < ApplicationController
   end
 
   def next_check
-    @correct = params["param1"]
-    @score = Score.find_by_user_id(params[:user_id])
-    if @score.nil?
-    @score = Score.new
+    @correct = params["param1"].to_i
+    @score = Score.where(user_id: current_user.id).last
+
+    if @score.nil? or @score.score_count == 10
+      @score = Score.new
+      @score.user = current_user
+      @score.save
     end
-    playerScore = 0
-    @score = playerScore
+
     if @correct.present?
-      @score += 5
+      if @correct == 1
+        @score.score += 5
+      end
+      if @correct == 2
+        @score.score += 10
+      end
+      if @correct == 0
+        @score.score += 0
+      end
     else
-      @score += 0
+      @score.score += 0
     end
-    respond_to do |format|
-      format.html { redirect_to activity_path(1) }
+    @score.score_count += 1
+
+    if @score.save && @score.score_count < 10
+      respond_to do |format|
+        format.html { redirect_to activity_path(1) }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to activities_finish_path }
+      end
     end
+
   end
 
   private
