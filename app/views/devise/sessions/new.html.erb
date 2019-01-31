@@ -12,9 +12,6 @@
     </div>
     <div class="row">
       <div class="col-md-8 col-md-offset-5">
-
-
-
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field">
               <%= f.label :email %><br />
@@ -119,3 +116,8 @@
   </div>
 
 </section>
+
+<script>
+  document.getElementById("panda-header").classList.remove('hide');
+
+</script>

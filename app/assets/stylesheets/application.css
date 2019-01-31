@@ -17,6 +17,7 @@
  *= require bootstrap-theme
  *= require style
  *= require default
+ *= require fullcalendar/dist/fullcalendar
  *= require_tree .
  *= require_self
  */

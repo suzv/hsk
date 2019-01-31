@@ -50,4 +50,5 @@ $(".meaning").on('click', function(e){
 
 
 
+
 });

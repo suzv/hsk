@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'scores/update'
+  get 'activities/calendar',to: "activities#calendar"
   get 'pages/index'
   root to: 'pages#index'
 

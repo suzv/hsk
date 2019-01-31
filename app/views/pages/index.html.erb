@@ -1,3 +1,5 @@
+
+<% unless user_signed_in? %>
 <br>
 <br>
 <br>
@@ -5,7 +7,6 @@
 <br>
 <br>
 
-<% unless user_signed_in? %>
   <div class="container ">
     <div class="col-md-2"></div>
     <div class="col-md-2">
@@ -39,16 +40,18 @@
       </div>
     </div>
   </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
 <% end %>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 <section id="footer" class="section footer">
@@ -119,3 +122,8 @@
   </div>
 
 </section>
+
+<script>
+  document.getElementById("panda-header").classList.remove('hide');
+
+</script>

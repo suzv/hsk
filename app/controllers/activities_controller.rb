@@ -4,9 +4,26 @@ class ActivitiesController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => [:next_check]
 
   def show
+    word_count = current_user.scores.last.score_count.to_i
+    if word_count == 10
+      @word_count = 1
+    else
+      @word_count = word_count + 1
+    end
+
     @word = Activity.new.random_word
     @meaning = [@word.meaning, Activity.new.random_meaning, Activity.new.random_meaning].shuffle
     @pinyin = [@word.pinyin, Activity.new.random_pinyin, Activity.new.random_pinyin].shuffle
+  end
+
+  def calendar
+
+    @score = Score.where(user_id: current_user.id)
+    @score_calendar = []
+    @score.each do |e|
+      @score_calendar << {"title" => "Puntaje: #{e.score}", "start" => "#{e.created_at}"}
+    end
+
   end
 
   def next_check
