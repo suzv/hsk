@@ -4,12 +4,18 @@ class ActivitiesController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => [:next_check]
 
   def show
-    word_count = current_user.scores.last.score_count.to_i
-    if word_count == 10
-      @word_count = 1
+    @score = Score.where(user_id: current_user.id).last
+    if @score.nil? == false
+      word_count = current_user.scores.last.score_count.to_i
+      if word_count == 10
+        @word_count = 1
+      else
+        @word_count = word_count + 1
+      end
     else
-      @word_count = word_count + 1
+      @word_count = 1
     end
+
 
     @word = Activity.new.random_word
     @meaning = [@word.meaning, Activity.new.random_meaning, Activity.new.random_meaning].shuffle
@@ -19,9 +25,9 @@ class ActivitiesController < ApplicationController
   def calendar
 
     @score = Score.where(user_id: current_user.id)
-    @score_calendar = []
+    @score_calendar = [{"title" => "DÍA DE HSK!!", "start" => "2019-03-23", "color" => "B83A3B"},{"title" => "DÍA DE HSK!!", "start" => "2019-07-13", "color" => "B83A3B"},{"title" => "DÍA DE HSK!!", "start" => "2019-12-01", "color" => "B83A3B"}]
     @score.each do |e|
-      @score_calendar << {"title" => "Puntaje: #{e.score}", "start" => "#{e.created_at}"}
+      @score_calendar << {"title" => "Puntaje: #{e.score}", "start" => "#{e.created_at.to_date}"}
     end
 
   end

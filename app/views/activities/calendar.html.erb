@@ -10,7 +10,7 @@
     <div id="calendar"></div>
   </div>
   <div class="col-md-3">
-      <div style="">
+      <div style="padding-top:90%">
       <img  style="width: 300px" src="<%= image_path 'cheer' %>" alt="">
 
     </div>
@@ -107,13 +107,11 @@
       dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
       dayNamesShort: ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],
 
-
-      events:
-         <%= raw @score_calendar.to_json  %>
-
+      events: <%= raw @score_calendar.to_json  %>,
+          
 
 
-
+      eventColor: '50BDC4',
 
 
 

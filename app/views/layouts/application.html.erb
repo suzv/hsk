@@ -18,17 +18,16 @@
   <body>
   <section id="header" class="appear"></section>
 	<div class="navbar navbar-fixed-top " role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
-    <div class="container">
-		    <div class="navbar-header">
-				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				    <span class="fa fa-bars color-white"></span>
-					</button>
+    <div class="container col-md-12">
+		    <div class="navbar-header col-md-2">
+
 					<h1>
-            <a class="navbar-brand"  data-0="line-height:90px;" data-300="line-height:50px;">PRACTICA-HSK</a>
+            <a class="navbar-brand"  data-0="line-height:90px;" data-300="line-height:50px;" >PRACTICA-HSK</a>
           </h1>
 				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+				<div class="navbar-collapse collapse ">
+
+					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;" style="padding-top:1%">
 
             <%if user_signed_in?%>
             <li class="nav-item"><%= link_to 'Inicio',root_path%> </li>
@@ -51,6 +50,7 @@
               <li class="nav-item">
                 <%= link_to('Logout', destroy_user_session_path(id: current_user.id, authenticity_token: form_authenticity_token), method: :delete) %>
               </li>
+              <li class="nav-item"><%= link_to 'Mi calendario', activities_calendar_path%> </li>
             <%end%>
 
 						<li><a href="http://www.chinesetest.cn/uregisterstart.do">Inscribete para la prueba</a></li>
@@ -58,16 +58,12 @@
             <li class="nav-item"><%= link_to 'Admin', admin_user_session_path%> </li>
 
 
-
-
-
-
             <% if user_signed_in?%>
-               <li style="color:white; padding-top:15px ;opacity:0.8">    <h4>Hola:
-               <%= current_user.email%></h4> </li>
+               <li class="nav-item" style="padding-top:1%"><h5>Hola: <%= current_user.email%></h5> </li>
 
             <% end %>
 					</ul>
+
 				</div><!--/.navbar-collapse -->
 			</div>
 		</div>
