@@ -10,26 +10,20 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//
-//= require modernizr-2.6.2-respond-1.1.0.min
 //= require jquery
-//= require jquery.easing.1.3
+//= require rails-ujs
+//= require modernizr-2.6.2-respond-1.1.0.min
 //= require bootstrap.min
 //= require jquery.isotope.min
 //= require jquery.nicescroll.min
 //= require jquery.fancybox.pack
 //= require jquery.scrollTo-1.4.3.1-min
 //= require jquery.localscroll-1.2.7-min
-//= require skrollr.min
 //= require stellar
 //= require main
 //= require jquery.appear
 //= require validate
-//= require rails-ujs
 //= require activestorage
 //= require activity
 //= require turbolinks
-//= require jquery/dist/jquery
-//= require moment/moment
-//= require fullcalendar/dist/fullcalendar
 //= require_tree .

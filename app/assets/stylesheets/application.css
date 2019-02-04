@@ -16,8 +16,8 @@
  *= require bootstrap
  *= require bootstrap-theme
  *= require style
- *= require default
  *= require fullcalendar/dist/fullcalendar
+ *= require default
  *= require_tree .
  *= require_self
  */
@@ -72,3 +72,15 @@
   .navbar-brand{
     display: none;
   }
+
+  .foto{
+    width: 400px;
+  }
+  .show-box {
+
+    width: 400px;
+    margin: 25px;
+    text-align: center;
+    margin-left:100px:
+  }
+}
