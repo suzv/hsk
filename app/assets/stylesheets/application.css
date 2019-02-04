@@ -62,3 +62,13 @@
 .section#footer {
   background: #6db9b0;
 }
+
+@media (max-width: 767px) {
+  .collapse{
+    display: table;
+    margin: auto;
+
+  }
+  .navbar-brand{
+    display: none;
+  }

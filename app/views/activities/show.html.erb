@@ -18,9 +18,7 @@
 </div>
 
 <div class="container">
-  <div class="col-md-1" style="margin-left:-1%">
-
-  </div>
+  <div class="col-md-1" style="margin-left:-1%">  </div>
   <div class="row">
 
     <div class="col-md-6">
@@ -35,18 +33,18 @@
         <br>
         <br>
         <br>
-      <div class="word-box">
+        <div class="word-box">
         <h1 style="padding-left: 30px"><span id="word-check" data-value="<%= @word.id %>" style="font-size:80px"> <%= @word.word %></span></h1>
-      </div>
+        </div>
         <br>
         <br>
         <br>
         <br>
-      <div style="margin-left:40px, margin-rigth:40px">
-        <% @meaning.each do |i| %>
-        <%= render 'meaning_button', text:i.meaning, value:i.word_id %>
-        <% end %>
-      </div>
+        <div style="margin-left:40px, margin-rigth:40px">
+          <% @meaning.each do |i| %>
+            <%= render 'meaning_button', text:i.meaning, value:i.word_id %>
+          <% end %>
+        </div>
         <br>
         <br>
         <br>
@@ -63,9 +61,7 @@
 <br>
 <br>
 
-<div class="">
-  <%= @playerScore %>
-</div>
+
 
 <section id="footer" class="section footer">
   <div class="col-md-2">
