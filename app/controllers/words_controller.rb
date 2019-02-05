@@ -1,6 +1,5 @@
 class WordsController < ApplicationController
-  load_and_authorize_resource param_method: :word_params
-  # before_action :set_word, only: [:show, :edit, :update, :destroy]
+   # before_action :set_word, only: [:show, :edit, :update, :destroy]
 
   # GET /add_words
   # GET /add_words.json
